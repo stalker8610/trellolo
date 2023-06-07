@@ -1,0 +1,11 @@
+:host {
+    display: inline-block;
+    min-width: 100px;
+    max-width: 200px;
+    border: 1px solid blueviolet;
+
+    .title {
+        font-size: large;
+        text-align: center;
+    }
+}

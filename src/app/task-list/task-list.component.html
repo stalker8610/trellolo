@@ -1,0 +1,10 @@
+<div class="title">{{taskList.title}}</div>
+
+<ul>
+    <li> 
+        <button type="button" (click)="addTask()">+ Add task</button>
+    </li>
+    <li *ngFor="let task of taskList.tasks">
+        <app-task [task]="task"></app-task>
+    </li>
+</ul>

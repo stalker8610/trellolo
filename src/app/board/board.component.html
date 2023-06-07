@@ -1,0 +1,19 @@
+
+    <div class="title mat-headline-4">TASK BOARD</div>
+    <ul>
+        <li *ngFor="let taskList of board; trackBy: trackTaskListBy">
+            <app-task-list [taskList]="taskList"></app-task-list>
+        </li>
+        <li>
+            <button (click)="addList()" mat-mini-fab color="primary" aria-label="Add new list">
+                <mat-icon>plus_one</mat-icon>
+            </button>
+        </li>
+        <li>
+            <app-board-tutorial></app-board-tutorial>
+        </li>
+    </ul>
+    
+<!--  -->
+
+<!-- [style.background-image]="'url(../../assets/background.jpg)'" -->

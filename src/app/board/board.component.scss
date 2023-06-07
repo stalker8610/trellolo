@@ -1,0 +1,35 @@
+@use '@angular/material' as mat;
+@use "sass:map";
+$grey-palette: mat.$grey-palette;
+
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    /* background-image: url('../../assets/background.jpg'); */
+    background-color: map.get($grey-palette, 50);
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: left;
+    align-items: flex-start;
+    list-style-type: none;
+
+    li {
+        display: inline-block;
+        margin: 5px;
+    }
+}
+
+.title {
+    width: 100%; 
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 24px !important;
+    color: map.get($grey-palette, 800);
+}
