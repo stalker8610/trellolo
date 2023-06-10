@@ -1,6 +1,19 @@
-<mat-toolbar color="primary">
-    <button mat-icon-button aria-label="Icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>Trellolo</span>
-</mat-toolbar>
+<div class="container">
+    <mat-toolbar color="primary">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="cleanBoard()">
+                <mat-icon>delete_outline</mat-icon>
+                <span>Очистить доску</span>
+            </button>
+            <button mat-menu-item (click)="leaveReview()">
+                <mat-icon>star</mat-icon>
+                <span>Оставить отзыв</span>
+            </button>
+        </mat-menu>
+        <span>Trellolo</span>
+    </mat-toolbar>
+    <span class="mat-headline-4 title">Доска #3343</span>
+</div>

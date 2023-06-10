@@ -1,0 +1,6 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{task.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content> {{task.description.length > 50 ? (task.description | slice:0:50) + '...' : task.description}}  </mat-card-content>
+</mat-card>

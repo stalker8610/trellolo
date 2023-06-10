@@ -1,0 +1,7 @@
+<span [class.invisible]="editing">
+    <ng-content select="[editableField]"></ng-content>
+</span>
+
+<span [class.invisible]="!editing">
+    <ng-content select="[containerForEditable]"></ng-content>
+</span>

@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
+
+    cleanBoard() {
+        alert('clean board works!')
+    }
+
+    leaveReview() {
+        alert('leave review works!')
+    }
 }

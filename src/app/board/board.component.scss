@@ -1,6 +1,4 @@
-@use '@angular/material' as mat;
-@use "sass:map";
-$grey-palette: mat.$grey-palette;
+@import '../../common-styles.scss';
 
 :host {
     position: relative;
@@ -8,13 +6,13 @@ $grey-palette: mat.$grey-palette;
     flex-direction: column;
     height: 100%;
     width: 100%;
-    /* background-image: url('../../assets/background.jpg'); */
-    background-color: map.get($grey-palette, 50);
+    background-color: pallete-color($light-green, 50);
 }
 
 ul {
     display: flex;
     flex-direction: row;
+    flex: 1 1 0px;
     flex-wrap: nowrap;
     justify-content: left;
     align-items: flex-start;
@@ -23,13 +21,6 @@ ul {
     li {
         display: inline-block;
         margin: 5px;
+        width: 280px;
     }
-}
-
-.title {
-    width: 100%; 
-    text-align: center;
-    margin-top: 12px;
-    margin-bottom: 24px !important;
-    color: map.get($grey-palette, 800);
 }

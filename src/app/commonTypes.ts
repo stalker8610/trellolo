@@ -1,6 +1,9 @@
+export type UserRole = 'developer' | 'teamlead';
+
 export interface User {
     id: number,
-    name: string
+    name: string,
+    role: UserRole,
 }
 
 export interface Task { 
@@ -8,7 +11,7 @@ export interface Task {
     title: string,
     description: string,
     author: User,
-    implementor: User,
+    implementor?: User,
 }
 
 export interface TaskList {

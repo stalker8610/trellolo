@@ -1,11 +1,17 @@
-:host {
-    display: inline-block;
-    min-width: 100px;
-    max-width: 200px;
-    border: 1px solid blueviolet;
+.task-panel {
 
-    .title {
-        font-size: large;
-        text-align: center;
+    .mdc-dialog__content, 
+    .desc {
+        color: black;
     }
+   
+    .mdc-dialog__title::before{
+        height: 0;
+    }
+
+    .mat-mdc-dialog-actions {
+        justify-content: flex-end;
+    }
+
+
 }

@@ -1,11 +1,19 @@
-import { Component } from '@angular/core';
+import { DataService } from './services/DataService';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'trellolo';
+export class AppComponent implements OnInit {
+    
+    title = 'trellolo';
+
+    constructor(private dataService: DataService) { }
+
+    ngOnInit() {
+        
+    }
 }

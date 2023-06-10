@@ -6,11 +6,11 @@ import { DataService } from '../services/DataService';
     selector: 'app-board',
     templateUrl: './board.component.html',
     styleUrls: ['./board.component.scss'],
-    providers: [DataService]
 })
 export class BoardComponent implements OnInit {
 
     board: TaskList[] | null = null;
+    id: number = 33821;
     constructor(private dataService: DataService) { }
 
     ngOnInit() {

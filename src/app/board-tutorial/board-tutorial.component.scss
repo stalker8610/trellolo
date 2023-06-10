@@ -1,7 +1,4 @@
-@use '@angular/material' as mat;
-@use "sass:map";
-
-$my-palette: mat.$deep-purple-palette;
+@import '../../common-styles.scss';
 
 :host {
     position: relative;
@@ -20,8 +17,8 @@ $my-palette: mat.$deep-purple-palette;
     display: inline-block;
     width: 15px;
     height: 15px;
-    border-bottom: 5px solid map.get($my-palette, 700);
-    border-left: 5px solid map.get($my-palette, 700);
+    border-bottom: 5px solid pallete-color($deep-purple, 700);
+    border-left: 5px solid pallete-color($deep-purple, 700);
     transform: rotate(45deg);
     margin: 0 -13px;
     animation: arrow 2s infinite;
@@ -47,6 +44,6 @@ $my-palette: mat.$deep-purple-palette;
 }
 
 .description {
-    color: map.get($my-palette, 900);
+    color: pallete-color($deep-purple, 900);
     margin-bottom: 0 !important;
 }

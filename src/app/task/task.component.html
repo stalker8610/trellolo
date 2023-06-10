@@ -1,5 +1,43 @@
-<div>
-    <div class="title">{{task.title}}</div>
-    <hr>
-    <div class="description">{{task.description}}</div>
+<mat-card-header mat-dialog-title>
+    <mat-card-title>
+        <app-editable>
+            <span editableField>{{task.title}}</span>
+            <mat-form-field containerForEditable [style.width]="'100%'">
+                <mat-label>Задача:</mat-label>
+                <input matInput type="text" inputForEditable>
+            </mat-form-field>
+        </app-editable>
+    </mat-card-title>
+    <mat-card-title-group>
+        <mat-card-subtitle>Создана: {{'10.03.2023'}}</mat-card-subtitle>
+        <mat-card-subtitle>Статус: {{'В работе'}}</mat-card-subtitle>
+    </mat-card-title-group>
+</mat-card-header>
+
+
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+    <div mat-card-subtitle class="desc"> Подробное описание:
+    </div>
+    <app-editable>
+        <span editableField>{{task.description}}</span>
+        <mat-form-field containerForEditable [style.width]="'100%'">
+            <textarea matInput inputForEditable></textarea>
+        </mat-form-field>
+    </app-editable>
+    <p></p>
+    <div class="attachments">
+        <mat-card-subtitle class="desc">Вложения:
+            <ng-container *ngIf="attachments.length === 0"> нет</ng-container>
+        </mat-card-subtitle>
+        <ul *ngIf="attachments.length">
+            <li *ngFor="let attachment of attachments">
+                <a [href]="attachment.url" class="attachmentLink">{{attachment.fileName}}</a>
+            </li>
+        </ul>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" type="button" (click)="saveTask()">Сохранить</button>
+        <button mat-stroked-button color="primary" type="button" mat-dialog-close="">Закрыть</button>
+    </div>
 </div>

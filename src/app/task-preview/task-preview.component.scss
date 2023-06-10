@@ -1,0 +1,18 @@
+@import '../../common-styles.scss';
+
+:host {
+    cursor: pointer;
+}
+
+.mdc-card {
+    background-color: pallete-color($grey, 100);
+}
+
+.mat-mdc-card-title {
+    color: pallete-color($deep-purple, 900);
+    font-size: 16px;
+}
+
+.mat-mdc-card-content {
+    color: pallete-color($grey, 700);
+}
