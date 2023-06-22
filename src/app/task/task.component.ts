@@ -1,4 +1,4 @@
-import { DataService } from './../services/DataService';
+import { DataService } from '../services/services.config';
 import { Component, Input, Inject, ViewEncapsulation, HostBinding } from '@angular/core';
 import { Task } from '../commonTypes';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';

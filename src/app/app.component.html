@@ -1,2 +1,12 @@
-<app-toolbar></app-toolbar>
-<app-board></app-board>
+<app-toolbar [workspaceName]="title"></app-toolbar>
+<div *ngIf="workspaceLoading$ | async; else content">
+    Загрузка...
+</div>
+<ng-template #content>
+    <div *ngIf="currentWorkspace; else authBlock">
+        <app-workspace [workspace]="currentWorkspace"></app-workspace>
+    </div>
+    <ng-template #authBlock>
+        Please log in
+    </ng-template>
+</ng-template>

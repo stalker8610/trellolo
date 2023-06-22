@@ -4,7 +4,7 @@
             <mat-icon>menu</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="cleanBoard()">
+            <button mat-menu-item (click)="cleanWorkspace()">
                 <mat-icon>delete_outline</mat-icon>
                 <span>Очистить доску</span>
             </button>
@@ -12,8 +12,12 @@
                 <mat-icon>star</mat-icon>
                 <span>Оставить отзыв</span>
             </button>
+            <button mat-menu-item (click)="restoreMockItems()">
+                <mat-icon>refresh</mat-icon>
+                <span>Восстановить тестовые данные</span>
+            </button>
         </mat-menu>
         <span>Trellolo</span>
     </mat-toolbar>
-    <span class="mat-headline-4 title">Доска #3343</span>
+    <span class="mat-headline-4 title">{{workspaceName}}</span>
 </div>

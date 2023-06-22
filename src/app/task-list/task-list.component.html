@@ -1,12 +1,23 @@
 <mat-card>
     <mat-card-header>
-        <app-editable>
-            <mat-card-title editableField>{{taskList.title}}</mat-card-title>
-            <mat-form-field containerForEditable [style.width]="'100%'">
-                <mat-label>Имя списка</mat-label>
-                <input matInput type="text" inputForEditable>
-            </mat-form-field>
-        </app-editable>
+        <mat-card-title>
+            <app-editable>
+                <div editableField>{{taskList.title}}</div>
+                <mat-form-field containerForEditable [style.width]="'100%'">
+                    <mat-label>Имя списка</mat-label>
+                    <input matInput type="text" inputForEditable>
+                </mat-form-field>
+            </app-editable>
+        </mat-card-title>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="deleteList()">
+                <mat-icon>delete_outline</mat-icon>
+                <span>Удалить список</span>
+            </button>
+        </mat-menu>
     </mat-card-header>
 
     <mat-card-actions>
@@ -14,9 +25,11 @@
     </mat-card-actions>
     <mat-divider></mat-divider>
     <mat-card-content>
-        <ul cdkDropList [cdkDropListData]="taskList.tasks" (cdkDropListDropped)="drop($event)">
-            <li *ngFor="let task of taskList.tasks" (click)="openCard(task)" cdkDrag>
-                <app-task-preview [task]="task"></app-task-preview>
+        <!-- <ul cdkDropList [cdkDropListData]="tasks$ | async" (cdkDropListDropped)="drop($event)"> -->
+        <ul cdkDropList [cdkDropListData]="tasks$ | async">
+            <li *ngFor="let task$ of tasks$ | async" (click)="openCard(task$)" cdkDrag>
+                <!-- {{ task$ | json}} -->
+                <app-task-preview [task]="task$"></app-task-preview>
             </li>
         </ul>
     </mat-card-content>

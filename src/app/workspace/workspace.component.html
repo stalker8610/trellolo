@@ -1,5 +1,5 @@
 <ul cdkDropListGroup>
-    <li *ngFor="let taskList of board; trackBy: trackTaskListBy">
+    <li *ngFor="let taskList of tasklists$ | async; trackBy: trackTaskListBy">
         <app-task-list [taskList]="taskList"></app-task-list>
     </li>
     <li [style.flex-basis]="'content'">
@@ -8,7 +8,7 @@
             <mat-icon>plus_one</mat-icon>
         </button>
     </li>
-    <li *ngIf="board?.length === 0" [style.flex-basis]="'content'">
-        <app-board-tutorial></app-board-tutorial>
+    <li *ngIf="!(tasklists$ | async)?.length" [style.flex-basis]="'content'">
+        <app-workspace-tutorial></app-workspace-tutorial>
     </li>
 </ul>

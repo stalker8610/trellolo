@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Task } from '../commonTypes';
+import { Task } from '../task/task.model';
 
 
 @Component({
